@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chaitali Patil | Personal Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #475569;
+    line-height: 1.7;
+    background: #fff;
+}
+
+h1, h2, h3 {
+    font-family: 'Manrope', sans-serif;
+    color: #14213d;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+nav {
+    min-height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: 800;
+    color: #14213d;
+    text-decoration: none;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.nav-links {
+    display: flex;
+    gap: 23px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #14213d;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.nav-links a:hover {
+    color: #2563eb;
+}
+
+.hero {
+    background: linear-gradient(120deg, #eff6ff, #dbeafe);
+    padding: 90px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-size: clamp(38px, 5vw, 58px);
+    margin: 15px 0;
+    line-height: 1.2;
+}
+
+.hero-text h1 span {
+    color: #2563eb;
+}
+
+.hero-text p {
+    font-size: 17px;
+    max-width: 620px;
+}
+
+.badge {
+    display: inline-block;
+    background: #dbeafe;
+    color: #1d4ed8;
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.hero-image {
+    flex: 0 0 300px;
+    text-align: center;
+}
+
+.hero-image img {
+    width: 280px;
+    height: 330px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 25px;
+    border: 7px solid white;
+    box-shadow: 0 15px 40px rgba(37,99,235,0.15);
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 28px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 23px;
+    border-radius: 8px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.primary {
+    background: #2563eb;
+    color: white;
+}
+
+.secondary {
+    border: 1px solid #2563eb;
+    color: #2563eb;
+}
+
+section {
+    padding: 80px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    max-width: 650px;
+    margin: auto;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+    font-size: 17px;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+}
+
+.light-section {
+    background: #f5f8ff;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 27px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(15,23,42,0.08);
+}
+
+.card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.icon {
+    font-size: 29px;
+    margin-bottom: 12px;
+}
+
+.card p {
+    font-size: 14px;
+}
+
+.card a {
+    display: inline-block;
+    color: #2563eb;
+    font-weight: 700;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.skill-tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.skill-tags span {
+    background: #dbeafe;
+    color: #1e40af;
+    padding: 8px 17px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.module {
+    color: #2563eb;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.education-card {
+    max-width: 750px;
+    margin: 0 auto 17px;
+    border-left: 4px solid #2563eb;
+}
+
+.contact {
+    background: #14213d;
+    color: white;
+    text-align: center;
+}
+
+.contact h2 {
+    color: white;
+}
+
+.contact p {
+    margin: 12px 0 25px;
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.contact-links a {
+    background: white;
+    color: #14213d;
+    padding: 11px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+footer {
+    background: #0c172b;
+    color: #cbd5e1;
+    text-align: center;
+    padding: 22px;
+    font-size: 13px;
+}
+
+@media(max-width: 800px) {
+    .hero-content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero-text p {
+        margin: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav {
+        flex-direction: column;
+        padding: 15px 0;
+        gap: 12px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+}
+
+@media(max-width: 550px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-image img {
+        width: 230px;
+        height: 270px;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container">
+<nav>
+<a href="#home" class="logo">Chaitali<span>.</span></a>
+
+<ul class="nav-links">
+<li><a href="#home">Home</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#internship">Internship</a></li>
+<li><a href="#education">Education</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+</div>
+</header>
+
+<section class="hero" id="home">
+<div class="container hero-content">
+
+<div class="hero-text">
+<span class="badge">MCA Student | Aspiring Professional</span>
+
+<h1>Hello, I'm <span>Chaitali Patil</span></h1>
+
+<p>
+I am an MCA student interested in technology, data,
+and digital business. I enjoy exploring new tools,
+working on practical projects, and continuously
+developing my skills.
+</p>
+
+<div class="buttons">
+<a href="#projects" class="btn primary">Explore My Work</a>
+<a href="#contact" class="btn secondary">Contact Me</a>
+</div>
+</div>
+
+<div class="hero-image">
+<img src="profile.jpg" alt="Professional portrait of Chaitali Patil">
+</div>
+
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+
+<div class="section-heading">
+<h2>About Me</h2>
+<p>A little introduction about my academic journey and interests.</p>
+</div>
+
+<div class="about-content">
+<p>
+I am currently pursuing a Master of Computer Applications (MCA).
+I am passionate about learning new technologies and developing
+practical skills.
+</p>
+
+<p>
+I have worked on Excel and Power BI dashboard projects and
+completed digital marketing research, SEO content, campaign
+planning, and documentation tasks.
+</p>
+
+<p>
+I am continuously improving my technical, analytical, and
+communication skills while exploring opportunities across
+different professional domains.
+</p>
+</div>
+
+</div>
+</section>
+
+<section class="light-section" id="skills">
+<div class="container">
+
+<div class="section-heading">
+<h2>My Skills</h2>
+<p>Tools and areas I have explored through learning and practical work.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">📊</div>
+<h3>Microsoft Excel</h3>
+<p>Data organization, cleaning, pivot tables, charts and dashboards.</p>
+</div>
+
+<div class="card">
+<div class="icon">📈</div>
+<h3>Power BI</h3>
+<p>Dashboard development, data visualization and reporting.</p>
+</div>
+
+<div class="card">
+<div class="icon">💻</div>
+<h3>Technical Skills</h3>
+<p>Computer application concepts and exploring new technologies.</p>
+</div>
+
+<div class="card">
+<div class="icon">🔍</div>
+<h3>Research & Analysis</h3>
+<p>Keyword research, competitor research and information organization.</p>
+</div>
+
+<div class="card">
+<div class="icon">✍️</div>
+<h3>Content & Documentation</h3>
+<p>SEO content writing, documentation and communication.</p>
+</div>
+
+<div class="card">
+<div class="icon">📱</div>
+<h3>Digital Marketing</h3>
+<p>Social media planning, promotional content and SEO basics.</p>
+</div>
+
+</div>
+
+<div class="skill-tags">
+<span>MS Word</span>
+<span>MS Excel</span>
+<span>Power BI</span>
+<span>Google Sheets</span>
+<span>SEO Research</span>
+<span>Content Writing</span>
+<span>Communication</span>
+<span>Documentation</span>
+</div>
+
+</div>
+</section>
+
+<section id="projects">
+<div class="container">
+
+<div class="section-heading">
+<h2>Featured Projects</h2>
+<p>A selection of my practical and learning-based work.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">📊</div>
+<h3>Sales Dashboard Using Excel</h3>
+<p>
+An interactive Excel dashboard using pivot tables,
+charts and slicers to understand sales performance.
+</p>
+<a href="https://github.com/Chaitali-patil01" target="_blank">View GitHub →</a>
+</div>
+
+<div class="card">
+<div class="icon">📉</div>
+<h3>Store Data Analysis</h3>
+<p>
+A data analysis project involving data cleaning,
+pivot tables, charts and sales trend analysis.
+</p>
+<a href="https://github.com/Chaitali-patil01" target="_blank">View GitHub →</a>
+</div>
+
+<div class="card">
+<div class="icon">🌐</div>
+<h3>Digital Marketing Campaign</h3>
+<p>
+Internship work covering SEO research, content
+planning, social media and growth strategy.
+</p>
+<a href="https://github.com/Chaitali-patil01/Chaitali-Portfolio" target="_blank">View Portfolio Repository →</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="light-section" id="internship">
+<div class="container">
+
+<div class="section-heading">
+<h2>Internship Experience</h2>
+<p>Codomax Digital Marketing Internship – learning and project documentation.</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<span class="module">MODULE 01</span>
+<h3>SEO & Content Marketing</h3>
+<p>Keyword research, SEO articles and content planning.</p>
+</div>
+
+<div class="card">
+<span class="module">MODULE 02</span>
+<h3>Backlinks & Outreach</h3>
+<p>Backlink research, outreach templates and SEO content.</p>
+</div>
+
+<div class="card">
+<span class="module">MODULE 03</span>
+<h3>Business Listings</h3>
+<p>Directory research, business profiles and brand audit.</p>
+</div>
+
+<div class="card">
+<span class="module">MODULE 04</span>
+<h3>Social Media Campaigns</h3>
+<p>Campaign roadmap, promotional creatives and content planning.</p>
+</div>
+
+<div class="card">
+<span class="module">MODULE 05</span>
+<h3>Influencer & Partnerships</h3>
+<p>Influencer research, collaboration pitches and proposals.</p>
+</div>
+
+<div class="card">
+<span class="module">MODULE 06</span>
+<h3>SEO Growth & Optimization</h3>
+<p>Keyword research, competitor analysis and CRO audit.</p>
+</div>
+
+<div class="card">
+<span class="module">MODULE 07</span>
+<h3>Final Growth Campaign</h3>
+<p>Campaign summary, deliverables checklist and presentation.</p>
+</div>
+
+</div>
+
+<div style="text-align:center; margin-top:30px;">
+<a class="btn primary"
+href="https://github.com/Chaitali-patil01/Codomax-Digital-Marketing-Internship"
+target="_blank">View Internship Repository</a>
+</div>
+
+</div>
+</section>
+
+<section id="education">
+<div class="container">
+
+<div class="section-heading">
+<h2>Education</h2>
+<p>My academic qualifications.</p>
+</div>
+
+<div class="card education-card">
+<h3>Master of Computer Applications (MCA)</h3>
+<p>Currently Pursuing | Second Year</p>
+</div>
+
+<div class="card education-card">
+<h3>Bachelor of Computer Applications (BCA)</h3>
+<p>2022 – 2025 | 73%</p>
+</div>
+
+<div class="card education-card">
+<h3>Higher Secondary Certificate (HSC)</h3>
+<p>2022 | 71%</p>
+</div>
+
+<div class="card education-card">
+<h3>Secondary School Certificate (SSC)</h3>
+<p>2020 | 88.40%</p>
+</div>
+
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="container">
+
+<div class="section-heading">
+<h2>Let's Connect</h2>
+<p>
+I am open to internships, learning opportunities
+and entry-level professional roles.
+</p>
+</div>
+
+<div class="contact-links">
+
+<a href="mailto:cp7843544@gmail.com">Email Me</a>
+
+<a href="https://www.linkedin.com/in/chaitali-patil-12062b363/"
+target="_blank">LinkedIn</a>
+
+<a href="https://github.com/Chaitali-patil01"
+target="_blank">GitHub</a>
+
+</div>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Chaitali Patil. All Rights Reserved.</p>
+<p>Personal Portfolio | Continuous Learning & Growth</p>
+</footer>
+
+</body>
+</html>
