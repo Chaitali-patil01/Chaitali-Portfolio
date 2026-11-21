@@ -136,11 +136,16 @@
       transform: rotate(1.5deg);
     }
     .avatar {
-      width: 100%; aspect-ratio: 1 / 1; border-radius: 21px;
-      display: grid; place-items: center;
-      color: #fff; font: 800 clamp(4rem, 8vw, 6rem) "Manrope", sans-serif;
-      letter-spacing: -.08em;
-      background:
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 430px;
+  aspect-ratio: auto;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 21px;
+  background: transparent;
+}
         radial-gradient(circle at 75% 20%, rgba(255,255,255,.3), transparent 28%),
         linear-gradient(145deg, #6879f0, #172b4b 72%);
     }
